@@ -5,80 +5,97 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5"
+    android:background="@drawable/fptsan30m"
     android:padding="16dp"
     tools:context=".MainActivity">
 
     <!-- Fragment Container -->
+
+    <!-- Trang Chu Button -->
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#A9A9A9"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="MY QUIZ"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Thu Vien Button -->
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="369dp"
+        android:layout_height="691dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@drawable/container_background"
         android:elevation="4dp"
         app:layout_constraintBottom_toTopOf="@+id/btnThuVien"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.413" />
 
-    <!-- Trang Chu Button -->
+    <!-- Ho So Button -->
+
     <Button
         android:id="@+id/btnTrangChu"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_width="89dp"
+        android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#6200EE"
-        android:text="Trang chủ"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="#A9A9A9"
         android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Trang chủ"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnThuVien"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintWidth_percent="0.3" />
 
-    <!-- Thu Vien Button -->
     <Button
         android:id="@+id/btnThuVien"
-        android:layout_width="0dp"
+        android:layout_width="99dp"
         android:layout_height="56dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#6200EE"
-        android:text="Thư viện"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="#A9A9A9"
         android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Thư viện"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnHoSo"
         app:layout_constraintStart_toEndOf="@+id/btnTrangChu"
         app:layout_constraintWidth_percent="0.3" />
 
-    <!-- Ho So Button -->
     <Button
         android:id="@+id/btnHoSo"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
+        android:layout_width="84dp"
+        android:layout_height="54dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#6200EE"
-        android:text="Hồ sơ"
-        android:textColor="#FFFFFF"
-        android:textAllCaps="false"
-        android:fontFamily="sans-serif-medium"
+        android:backgroundTint="#A9A9A9"
         android:elevation="4dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="Hồ sơ"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
         app:cornerRadius="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

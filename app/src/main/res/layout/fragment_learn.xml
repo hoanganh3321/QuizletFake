@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tint"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentLearn">
+
+
+    <TextView
+        android:id="@+id/tvLearnQuestion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAnswer0"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="#00E3D2D2"
+        android:fontFamily="sans-serif"
+        android:text="Button"
+        android:textColor="#120E11"
+        app:cornerRadius="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvLearnQuestion"
+        app:strokeColor="#004102"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/btnAnswer1"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="#00E3D2D2"
+        android:fontFamily="sans-serif"
+        android:text="Button"
+        android:textColor="#120E11"
+        app:cornerRadius="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnAnswer0"
+        app:strokeColor="#004102"
+        app:strokeWidth="2dp"
+        tools:layout_editor_absoluteX="144dp" />
+
+    <Button
+        android:id="@+id/btnAnswer2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="#00E3D2D2"
+        android:fontFamily="sans-serif"
+        android:text="Button"
+        android:textColor="#120E11"
+        app:cornerRadius="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnAnswer1"
+        app:strokeColor="#004102"
+        app:strokeWidth="2dp"
+        tools:layout_editor_absoluteX="144dp" />
+
+    <Button
+        android:id="@+id/btnAnswer3"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:backgroundTint="#00E3D2D2"
+        android:fontFamily="sans-serif"
+        android:text="Button"
+        android:textColor="#120E11"
+        app:cornerRadius="1dp"
+        app:layout_constraintTop_toBottomOf="@+id/btnAnswer2"
+        app:strokeColor="#004102"
+        app:strokeWidth="2dp"
+        tools:layout_editor_absoluteX="144dp" />
+
+    <TextView
+        android:id="@+id/tvCompliment"
+        android:layout_width="match_parent"
+        android:layout_height="131dp"
+        android:layout_marginBottom="92dp"
+        android:background="#1B1E1A"
+        android:layerType="none"
+        android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:text="TextView"
+        android:textColor="#1B6513"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnContinue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Tiếp tục"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCompliment"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

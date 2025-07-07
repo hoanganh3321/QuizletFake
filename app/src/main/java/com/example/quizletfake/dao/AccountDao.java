@@ -34,6 +34,9 @@ public interface AccountDao {
     @Query("SELECT * FROM account WHERE  accountEmail = :pass   ")
     Account GetAccountByMail(String pass);
 
+    @Query("SELECT * FROM account WHERE accountID = :id LIMIT 1")
+    Account getAccountById(int id);
+
 
 
 
