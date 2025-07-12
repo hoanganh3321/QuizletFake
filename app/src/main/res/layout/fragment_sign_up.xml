@@ -2,160 +2,187 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutSignUp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#95FFEB3B"
+    android:background="#80FFFFFF"
     tools:context=".FragmentSignUp">
+
+    <!-- Left Guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <!-- Right Guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="24dp" />
+
+    <!-- Welcome Title -->
+    <TextView
+        android:id="@+id/tvWelcome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:contentDescription="Welcome to sign up"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="32dp" />
+
+    <!-- Name -->
+    <TextView
+        android:id="@+id/labelName"
+        style="@style/TextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        app:layout_constraintTop_toBottomOf="@id/tvWelcome"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="24dp" />
 
     <EditText
         android:id="@+id/edtName"
-        android:layout_width="wrap_content"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="128dp"
-        android:ems="10"
-        android:hint="8-32 char"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:hint="Enter your name (8-32 characters)"
+        android:inputType="textPersonName"
+        android:contentDescription="Enter your full name"
+        app:layout_constraintTop_toBottomOf="@id/labelName"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="4dp" />
+
+    <!-- Email -->
+    <TextView
+        android:id="@+id/labelEmail"
+        style="@style/TextViewStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        app:layout_constraintTop_toBottomOf="@id/edtName"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="16dp" />
 
     <EditText
         android:id="@+id/edtEmail"
-        android:layout_width="wrap_content"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="29dp"
-        android:ems="10"
-        android:hint="8-32 char that contain @"
-        android:inputType="text"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtName" />
+        android:hint="Enter your email (e.g., example@domain.com)"
+        android:inputType="textEmailAddress"
+        android:contentDescription="Enter your email address"
+        app:layout_constraintTop_toBottomOf="@id/labelEmail"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd" />
 
-    <EditText
-        android:id="@+id/edtPass"
-        android:layout_width="wrap_content"
+    <!-- Date of Birth -->
+    <TextView
+        android:id="@+id/labelDob"
+        style="@style/TextViewStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="19dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Password"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtDob" />
-
-    <EditText
-        android:id="@+id/edtRepass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginTop="22dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:hint="Confrim Your PassWord"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtPass" />
-
-    <Button
-        android:id="@+id/btnSign"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="24dp"
-        android:text="Create New Account"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtRepass" />
-
-    <ListView
-        android:id="@+id/listAcount"
-        android:layout_width="403dp"
-        android:layout_height="110dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="204dp"
-        android:visibility="invisible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnSign" />
+        android:text="Date of Birth"
+        app:layout_constraintTop_toBottomOf="@id/edtEmail"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="16dp" />
 
     <EditText
         android:id="@+id/edtDob"
-        android:layout_width="wrap_content"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="27dp"
-        android:ems="10"
-        android:hint="Your Birthday"
+        android:hint="MM/DD/YYYY"
         android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        android:contentDescription="Enter your date of birth"
+        app:layout_constraintTop_toBottomOf="@id/labelDob"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd" />
 
+    <!-- Password -->
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="144dp"
-        android:layout_marginEnd="32dp"
-        android:text="User Name:"
+        android:id="@+id/labelPass"
         style="@style/TextViewStyle"
-        app:layout_constraintEnd_toStartOf="@+id/edtName"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="9dp"
-        android:text="Replace Pass:"
-        style="@style/TextViewStyle"
-        app:layout_constraintEnd_toStartOf="@+id/edtRepass"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        android:text="Password"
+        app:layout_constraintTop_toBottomOf="@id/edtDob"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="16dp" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edtPass"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="32dp"
-        android:text="PassWord:"
-        android:textAlignment="viewStart"
-        style="@style/TextViewStyle"
-        app:layout_constraintEnd_toStartOf="@+id/edtPass"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        android:hint="Enter your password"
+        android:inputType="textPassword"
+        android:contentDescription="Enter your password"
+        app:layout_constraintTop_toBottomOf="@id/labelPass"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd" />
 
+    <!-- Confirm Password -->
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
+        android:id="@+id/labelRepass"
+        style="@style/TextViewStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="16dp"
-        android:text="Date Of Birth:"
-        style="@style/TextViewStyle"
-        app:layout_constraintEnd_toStartOf="@+id/edtDob"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        android:text="Confirm Password"
+        app:layout_constraintTop_toBottomOf="@id/edtPass"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="16dp" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/edtRepass"
+        style="@style/EditTextStyle"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:layout_marginEnd="28dp"
-        android:text="User Gmail:"
-        style="@style/TextViewStyle"
-        app:layout_constraintEnd_toStartOf="@+id/edtEmail"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:hint="Re-enter your password"
+        android:inputType="textPassword"
+        android:contentDescription="Confirm your password"
+        app:layout_constraintTop_toBottomOf="@id/labelRepass"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="278dp"
-        android:layout_height="59dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="monospace"
-        android:text="Welcome to Sign Up "
-        android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- Button -->
+    <Button
+        android:id="@+id/btnSign"
+        style="@style/ButtonStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Create New Account"
+        android:contentDescription="Create a new account"
+        app:layout_constraintTop_toBottomOf="@id/edtRepass"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        android:layout_marginTop="24dp" />
 
+    <!-- ListView -->
+    <ListView
+        android:id="@+id/listAcount"
+        android:layout_width="0dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="16dp"
+        android:visibility="invisible"
+        android:contentDescription="List of accounts"
+        app:layout_constraintTop_toBottomOf="@id/btnSign"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

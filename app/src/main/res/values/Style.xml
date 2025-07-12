@@ -1,9 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="TextViewStyle" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">#9C27B0</item>
-        <item name="android:textStyle">bold</item>
+    <!-- Style for TextView labels (User Name, User Gmail, Date of Birth, etc.) -->
+    <style name="TextViewStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#212121</item> <!-- Dark gray for readability -->
+        <item name="android:fontFamily">sans-serif-medium</item> <!-- Clean, modern font -->
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingEnd">8dp</item> <!-- Padding for alignment with EditText -->
+        <item name="android:layout_marginEnd">8dp</item> <!-- Consistent spacing -->
     </style>
 
+    <!-- Style for EditText fields (Name, Email, Password, etc.) -->
+    <style name="EditTextStyle">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#212121</item> <!-- Dark gray for text -->
+        <item name="android:textColorHint">#757575</item> <!-- Medium gray for hints -->
+        <item name="android:background">@drawable/edit_text_background</item> <!-- Custom background -->
+        <item name="android:padding">12dp</item> <!-- Comfortable padding -->
+        <item name="android:layout_width">0dp</item> <!-- Match constraints -->
+        <item name="android:layout_height">48dp</item> <!-- Standard height for input fields -->
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Style for the Sign Up Button -->
+    <style name="ButtonStyle">
+        <item name="android:background">@drawable/button_background</item> <!-- Custom button background -->
+        <item name="android:textColor">#FFFFFF</item> <!-- White text for contrast -->
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">48dp</item> <!-- Consistent height -->
+        <item name="android:textAllCaps">false</item> <!-- Disable all-caps for modern look -->
+        <item name="android:elevation">4dp</item> <!-- Slight elevation for depth -->
+    </style>
+
+    <!-- Style for the Welcome TextView -->
+    <style name="WelcomeTextStyle">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#212121</item> <!-- Dark gray for contrast -->
+        <item name="android:fontFamily">monospace</item> <!-- Matches XML -->
+        <item name="android:textStyle">bold|italic</item> <!-- Matches XML -->
+        <item name="android:textAlignment">center</item>
+        <item name="android:padding">16dp</item> <!-- Padding for better spacing -->
+    </style>
+
+    <!-- Style for ListView (if visible) -->
+    <style name="ListViewStyle">
+        <item name="android:background">#FFFFFF</item> <!-- White background for contrast -->
+        <item name="android:divider">@android:color/darker_gray</item> <!-- Subtle divider -->
+        <item name="android:dividerHeight">1dp</item>
+        <item name="android:padding">8dp</item>
+    </style>
 
 </resources>
