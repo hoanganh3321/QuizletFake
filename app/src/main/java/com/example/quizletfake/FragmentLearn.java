@@ -13,7 +13,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.quizletfake.model.QuestionAnswerDisplay;
-
+import com.example.quizletfake.model.StudySession;
+import com.example.quizletfake.model.StudySessionPrefs;
+import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
@@ -33,10 +35,13 @@ public class FragmentLearn extends Fragment {
     private TextView tvResult;
     private List<QuestionAnswerDisplay> questionAnswerDisplayList;
     Random r ;
+    private int quizId; // Thêm biến này
 
     public void setQuestionAnswerDisplayList(List<QuestionAnswerDisplay> questionAnswerDisplayList) {
         this.questionAnswerDisplayList = questionAnswerDisplayList;
     }
+
+    public void setQuizId(int quizId) { this.quizId = quizId; }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -141,6 +146,15 @@ public class FragmentLearn extends Fragment {
         }
         tvResult.setEnabled(true);
         tvResult.setVisibility(View.VISIBLE);
+
+        // Lưu kết quả học vào StudySessionPrefs
+        int accountId = AccountNow.thisAccount != null ? AccountNow.thisAccount.getAccountID() : 0;
+        int quizId = this.quizId;
+        int correctCount = soCauDung;
+        int totalCount = numberOfQuestion;
+        long durationMillis = 0; // Nếu có thể tính thời gian làm bài thì truyền vào, tạm để 0
+        StudySession session = new StudySession(0, accountId, quizId, new Date(), correctCount, totalCount, durationMillis);
+        StudySessionPrefs.saveSession(requireContext(), session);
     }
 
     private void onBtnAnswer3Click(View view) {

@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnTrangChu;
     private Button btnThuVien;
     private Button btnHoSo;
+    private Button btnThongKe;
     private FragmentContainerView fragmentContainerView;
     private FragmentTrangChu fragmentTrangChu;
     private FragmentThuVien fragmentThuVien;
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentLearn fragmentLearn;
     private FragmentAddNewQuiz fragmentAddNewQuiz;
     private FragmentEditQuiz fragmentEditQuiz;
+    private FragmentThongKe fragmentThongKe;
     private ConstraintLayout cl;
     private QuizAccount quizAccount;
     private QuizAccountDao quizAccountDao;
@@ -98,6 +100,7 @@ public class MainActivity extends AppCompatActivity {
         btnTrangChu.setOnClickListener(this::onBtnTrangChuClick);
         btnThuVien.setOnClickListener(this::onBtnThuVienClick);
         btnHoSo.setOnClickListener(this::onBtnHoSoClick);
+        btnThongKe.setOnClickListener(this::onBtnThongKeClick);
         cl.setOnClickListener(this::layoutClick);
     }
     private void layoutClick(View view) {
@@ -170,6 +173,16 @@ public class MainActivity extends AppCompatActivity {
             fragmentLearn = new FragmentLearn();
         }
         fragmentLearn.setQuestionAnswerDisplayList(questionAnswerDisplays);
+        // Lấy quizId từ fragmentDetailQuiz nếu có
+        int quizId = 0;
+        if (fragmentDetailQuiz != null) {
+            try {
+                java.lang.reflect.Field f = fragmentDetailQuiz.getClass().getDeclaredField("quizID");
+                f.setAccessible(true);
+                quizId = f.getInt(fragmentDetailQuiz);
+            } catch (Exception e) { quizId = 0; }
+        }
+        fragmentLearn.setQuizId(quizId);
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentLearn)
@@ -214,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
         fragmentContainerView=findViewById(R.id.fragmentContainerView);
         cl=findViewById(R.id.constraintLayout);
         quizAccount=new QuizAccount();
+        btnThongKe=findViewById(R.id.btnThongKe);
 
         //DAO
         AppDatabase db = AppDatabase.getInstance(this);
@@ -232,6 +246,17 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentTrangChu)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    private void onBtnThongKeClick(View view) {
+        if (fragmentThongKe == null) {
+            fragmentThongKe = new FragmentThongKe();
+        }
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragmentContainerView, fragmentThongKe)
                 .addToBackStack(null)
                 .commit();
     }
