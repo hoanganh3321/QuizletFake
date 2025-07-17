@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentHoSo)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -129,6 +130,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentThuVien)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -157,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentDetailQuiz)
+                .addToBackStack(null)
                 .commit();
 
     }
@@ -170,6 +173,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentLearn)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -183,6 +187,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentFlashcard)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -198,6 +203,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentTrangChu)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -226,6 +232,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentTrangChu)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -265,6 +272,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentTrangChu)
+                .addToBackStack(null)
                 .commit();
     }
 
@@ -278,6 +286,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(R.id.fragmentContainerView, fragmentEditQuiz)
+                .addToBackStack(null)
                 .commit();
 
     }
@@ -298,6 +307,7 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.fragmentContainerView, fragmentAddNewQuiz)
+                    .addToBackStack(null)
                     .commit();
 
         }

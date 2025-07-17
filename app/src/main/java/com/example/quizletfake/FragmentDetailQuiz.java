@@ -88,6 +88,11 @@ public class FragmentDetailQuiz extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Xử lý nút back trên Toolbar nếu có
+        androidx.appcompat.widget.Toolbar toolbar = view.findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            toolbar.setNavigationOnClickListener(v -> requireActivity().onBackPressed());
+        }
         bindingView(view);
         bindingAction();
         initRecyclerView();
